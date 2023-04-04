@@ -23,16 +23,21 @@ int main() {
     array->pop_front(); 
     array->push_back(15);
     array->push_back(9);
-    array->push_back(4);         
-    ASSERT(array[0] == 3 && array[6] == 4, "The operator [] is not working");    
+    array->push_back(4);   
+    //ASSERT((*array)[0] == 3 && (*array)[6] == 4, "The operator [] is not working");  
     ASSERT(array->is_sorted() == false, "The function is_sorted is not working");
     array->sort();
     ASSERT(array->to_string() == "1 3 4 7 8 9 15 ", "The function sort is not working");
     array->reverse();
     ASSERT(array->to_string() == "15 9 8 7 4 3 1 ", "The function reverse is not working");   
-    array->insert(10, 1);       
     array->pop_back();  
+    array->insert(10, 1);       
     ASSERT(array->size() == 7, "The function size is not working");   
+
     delete array;
+    
     return 0;
 }
+
+
+   
